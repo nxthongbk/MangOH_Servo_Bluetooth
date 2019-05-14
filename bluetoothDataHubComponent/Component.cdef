@@ -1,0 +1,13 @@
+sources:
+{
+	bluetoothDataHub.c
+}
+
+requires:
+{
+	api:
+	{
+		$LEGATO_ROOT/apps/sample/dataHub/io.api
+		$LEGATO_ROOT/apps/sample/dataHub/admin.api
+	}
+}

@@ -1,0 +1,31 @@
+start: auto
+version: 0.1
+
+executables:
+{
+	bluetoothDataHub = ( bluetoothDataHubComponent )
+}
+
+processes:
+{
+	run:
+	{
+		( bluetoothDataHub )
+	}
+}
+
+requires:
+{
+	device:
+	{
+		// replace these devices based on your module
+		[rw]	/dev/ttyHS0	/dev/
+	}
+}
+
+
+bindings:
+{
+	bluetoothDataHub.bluetoothDataHubComponent.io -> dataHub.io
+	bluetoothDataHub.bluetoothDataHubComponent.admin -> dataHub.admin
+}

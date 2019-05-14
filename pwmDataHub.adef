@@ -1,0 +1,22 @@
+start: auto
+version: 0.1
+
+executables:
+{
+	pwmDataHub = ( pwmDataHubComponent )
+}
+
+processes:
+{
+	run:
+	{
+		( pwmDataHub )
+	}
+}
+
+bindings:
+{
+	pwmDataHub.pwmDataHubComponent.io -> dataHub.io
+	pwmDataHub.pwmDataHubComponent.admin -> dataHub.admin
+	pwmDataHub.pwmDataHubComponent.ma_pwm -> pwmDriver.ma_pwm
+}
